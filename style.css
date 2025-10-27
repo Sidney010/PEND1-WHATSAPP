@@ -2,7 +2,7 @@
     --primary-color: #F7F5F3;
     --secundary-color: #EFEDEB;
     --third-color: #ECE9E8;
-    --fourth-color: #C4E6FE;
+    --fourth-color: #F0EEED;
 }
 
 * {
@@ -18,6 +18,7 @@ main {
     display: flex;
     flex-direction: row;
 }
+
 /* PARTE LATERAL ESQUERDA*/
 .barra-left {
     border: 1px solid var(--secundary-color);
@@ -31,17 +32,26 @@ main {
     justify-content: space-between;
 
 }
-
+#settings:hover {
+    transform: rotate(180deg);
+    transition: 1.2s;
+}
+#status:hover {
+    transform: rotate(180deg);
+    transition: 1.2s;
+}
 .icons-botton {
     gap: 10px;
     padding: 10px;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
 .icons-top {
     padding: 10px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
 }
@@ -51,23 +61,34 @@ main {
     border: 3px solid transparent;
     border-radius: 31px;
 }
+
 .icons-top img:hover {
     border-color: var(--third-color);
 }
+
 .icons-botton img {
     height: 28px;
     border: 3px solid transparent;
     border-radius: 31px;
 }
+
 .icons-botton img:hover {
-    border-color:var(--third-color);
+    border-color: var(--third-color);
 }
+
 .perfil-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 25px;
     width: 25px;
-    border-radius: 25px;
-    background-color: aqua;
 }
+
+.perfil-img img {
+    height: 25px;
+    width: 25px;
+}
+
 
 /* PARTE CENTRAL*/
 .area-meio {
@@ -86,9 +107,9 @@ main {
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 5px 5px;
 
 }
+
 .perfil-conversa-top {
     height: 6%;
     display: flex;
@@ -98,16 +119,146 @@ main {
     padding: 5px 5px;
 
 }
-.conversa-medio {
-    height: 90%;
+
+.perfil-conversa-top .left {
+    gap: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
 
 }
-.chat-conversa-botton{
-    height: 6%;
+
+.nome-numero {
+    display: flex;
+    flex-direction: column;
 }
-.perfil-conversa {
+
+.perfil-conversa-top .left .nome-numero .nome span {
+    font-size: 1rem;
+}
+
+.perfil-conversa-top .left .nome-numero .numero span {
+    font-size: 0.8rem;
+}
+
+.perfil-conversa-top .right {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+
+}
+
+.perfil-conversa-top .right img {
     height: 30px;
     width: 30px;
-    border-radius: 30px;
-    background-color: aqua;
+
+}
+
+.perfil-conversa-top .right img:hover {
+    transition: 0.2s;
+    opacity: 80%;
+
+}
+
+.perfil-conversa {
+    height: 35px;
+    width: 35px;
+}
+
+.perfil-conversa img {
+    height: 35px;
+    width: 35px;
+    border: 3px solid transparent;
+    border-radius: 38px;
+}
+
+.perfil-conversa img:hover {
+    border-color: var(--third-color);
+}
+
+.conversa-medio {
+    height: 88%;
+    background-color: #C4E6FE;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    gap: 12px;
+}
+.messager-destinatario {
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.messager-remetente {
+    gap: 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+.chat-conversa-botton {
+    height: 6%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 5px 20px 5px 20px;
+}
+
+.chat-conversa-botton img {
+    height: 30px;
+    width: 30px;
+}
+
+.chat {
+    gap: 5px;
+    padding: 20px 10px;
+    border: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 70%;
+    width: 80%;
+    border-radius: 50px;
+
+}
+.chat input {
+    height: 30px;
+    width: 90%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+#enviar {
+    border: 3px solid transparent;
+    height: 25px;
+    width: 28px;
+    display: none;
+}
+#microfone {
+    display: block;
+    border: 3px solid transparent;
+    height: 30px;
+    width: 28px;
+    border-radius: 28px;
+}
+#enviar:hover {
+    opacity: 80%;
+}
+#microfone:hover {
+    border-color: aquamarine;
+    opacity: 80%;
+}
+
+.chat:focus-within ~ #enviar {
+    display: block;
+}
+.chat:focus-within ~ #microfone {
+    display: none;
 }
