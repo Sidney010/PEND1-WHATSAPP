@@ -1,7 +1,7 @@
 :root {
     --primary-color: #F7F5F3;
     --secundary-color: #EFEDEB;
-    --third-color: #ECE9E8;
+    --third-color: #eccfc6;
     --fourth-color: #F0EEED;
 }
 
@@ -32,14 +32,17 @@ main {
     justify-content: space-between;
 
 }
+
 #settings:hover {
     transform: rotate(180deg);
     transition: 1.2s;
 }
+
 #status:hover {
     transform: rotate(180deg);
     transition: 1.2s;
 }
+
 .icons-botton {
     gap: 10px;
     padding: 10px;
@@ -98,6 +101,35 @@ main {
     height: 100%;
     display: flex;
     flex-direction: column;
+    padding: 15px 20px;
+}
+
+.titulo-adicione-conversa-configurar h1 {
+    color: #1daa61;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.titulo-adicione-conversa-configurar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.adicione-conversa-configurar {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.adicione-conversa-configurar img {
+    height: 20px;
+    width: 20px;
+}
+
+.adicione-conversa-configurar img:hover {
+    opacity: 70%;
 }
 
 /* PARTE LATERAL DIREITA*/
@@ -111,7 +143,8 @@ main {
 }
 
 .perfil-conversa-top {
-    height: 6%;
+    position: relative;
+    height: 8%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -161,7 +194,7 @@ main {
 
 .perfil-conversa-top .right img:hover {
     transition: 0.2s;
-    opacity: 80%;
+    opacity: 60%;
 
 }
 
@@ -182,26 +215,58 @@ main {
 }
 
 .conversa-medio {
-    height: 88%;
+    height: 84%;
     background-color: #C4E6FE;
     display: flex;
     flex-direction: column;
-    padding: 10px 10px;
+    padding: 50px 30px;
     gap: 12px;
 }
-.messager-destinatario {
+
+.conversa-medio .menssager-remetente {
+    display: flex;
+    justify-content: space-between;
+}
+
+.conversa-medio .menssager-destinatario {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.menssager-destinatario .mensagem {
+    width: auto;
+    background-color: #e4bcff;
+    padding: 10px;
     gap: 12px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    border-radius: 20px;
 }
-.messager-remetente {
+
+.menssager-remetente .mensagem {
+    width: auto;
+    background-color: aquamarine;
+    border-radius: 20px;
+    padding: 10px;
     gap: 12px;
     display: flex;
     flex-direction: row;
 }
 
+.menssager-destinatario span {
+    display: flex;
+    justify-content: end;
+}
+
+.menssager-destinatario .horario span,
+.menssager-remetente .horario span {
+    font-size: 0.8rem;
+}
+
 .chat-conversa-botton {
-    height: 6%;
+    position: relative;
+    height: 8%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -227,6 +292,7 @@ main {
     border-radius: 50px;
 
 }
+
 .chat input {
     height: 30px;
     width: 90%;
@@ -235,12 +301,14 @@ main {
     outline: none;
     box-shadow: none;
 }
+
 #enviar {
     border: 3px solid transparent;
     height: 25px;
     width: 28px;
     display: none;
 }
+
 #microfone {
     display: block;
     border: 3px solid transparent;
@@ -248,17 +316,20 @@ main {
     width: 28px;
     border-radius: 28px;
 }
+
 #enviar:hover {
-    opacity: 80%;
-}
-#microfone:hover {
-    border-color: aquamarine;
-    opacity: 80%;
+    opacity: 70%;
 }
 
-.chat:focus-within ~ #enviar {
+#microfone:hover {
+    border-color: aquamarine;
+    opacity: 70%;
+}
+
+.chat:focus-within~#enviar {
     display: block;
 }
-.chat:focus-within ~ #microfone {
+
+.chat:focus-within~#microfone {
     display: none;
 }
